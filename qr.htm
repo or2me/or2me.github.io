@@ -9,18 +9,21 @@
 <script src="https://lib.sinaapp.com/js/jquery/3.1.0/jquery-3.1.0.min.js"></script>
 <script src="https://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
 <div id="qr_container">
-</div>
-<div class="wrap">
-	<div class="search">
-		<input id="qr_text" type="text" class="searchTerm" placeholder="请输入严选/考拉的商品网址!"><button id="qr_btn" type="submit" class="searchButton">go</button>
+	<div class="input-group col-md-3 mx-auto" style="margin-top:0px;">
+        <input id="qr_text" type="text" class="form-control" style="text-align:center" onkeydown='if(event.keyCode==13) $("#qr_btn").click();' placeholder="请输入严选/考拉的商品网址!">
+        <span class="input-group-btn">
+            <button class="btn btn-info btn-search" id="qr_btn">提交</button>
+            
+         </span>
 	</div>
 	<br>
 	<br>
-	<div id="imgDiv" style="text-align:center">
+	<div id="imgDiv" class="img-responsive center-block" style="text-align:center">
 	</div>
 	<br>
 	<div style="text-align:center">
-		<a id="link"></a>
+        
+        <a id="link" href="#" class="btn btn-info" role="button">雅国专属</a>
 	</div>
 </div>
 <script> $(document).ready(function() {
@@ -67,9 +70,6 @@
 		0 != $("#link").text.length ? ($("#imgDiv  img").remove(), t()) : t()
 	})
 }); </script>
-
-<style type="text/css">
-body{background:#f2f2f2;font-family:'Open Sans',sans-serif}.search{width:100%;position:relative}.searchTerm{float:left;width:100%;border:3px solid #00B4CC;padding:5px;height:20px;border-radius:5px;outline:0;color:#9DBFAF}.searchTerm:focus{color:#00B4CC}.searchButton{position:absolute;right:-50px;width:40px;height:36px;border:1px solid #00B4CC;background:#00B4CC;text-align:center;color:#fff;border-radius:5px;cursor:pointer;font-size:20px}.wrap{width:70%;position:absolute;top:50%;left:40%;transform:translate(-50%,-50%)}
-</style>
+<link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
 </body>
 </html>

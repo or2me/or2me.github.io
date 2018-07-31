@@ -16,7 +16,7 @@
 	<script src="https://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
 </head>
 <body>
-	<h1 id="sss">请输入严选/考拉的商品网址</h1>
+	<h1 id="sss">请返回上一级，点击页面底部的访问原网页，或复制网址后使用其他浏览器打开！</h1>
 <div>
     <label for="qr_text">网址:</label>      
     <input id="qr_text" type="text" value="" style="width:80%;" /> 
@@ -26,8 +26,8 @@
 <a id="imgDiv" style="margin:auto; position:relative;"></a>
 <script>
 	$(document).ready(function(){
-    if(window.location.hostname != "or2.me"){
-        $('#sss').text = "请返回上一级，选择页面底部的访问原网页，或复制网址后使用其他浏览器打开！"
+    if(window.location.hostname == "or2.me"){
+        $('#sss').text = "请输入严选/考拉的商品网址!"
     }
     // 点击生成二维码
     $('#qr_btn').click(function(){  

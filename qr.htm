@@ -23,7 +23,54 @@
 		<a id="link"></a>
 	</div>
 </div>
-<script>$(document).ready(function(){function e(e){var t=e,r=/http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/,n=new RegExp(r);return n.test(t)}function t(){document.createElement("canvas").getContext("2d");var t=$("#qr_text").val().trim();if(e(t)){t=t.replace("&","&ts_share=1&ts_sharerId=299612430f40089f&");var a=/^[\u0391-\uFFE5]+$/;$("#qr_container").qrcode(""==t||a.test(t)?{render:"canvas",height:256,width:256,correctLevel:0,text:n(t)}:{render:"canvas",height:256,width:256,correctLevel:0,text:t}),$("#link").attr("href",t),$("#link").text("直接访问");var o=document.getElementsByTagName("canvas")[0],i=r(o);$("#imgDiv").append(i),$("canvas").remove()}else alert("您输入的网址不正确！"),$("#link").text("您输入的网址不正确！")}function r(e){var t=new Image;return t.src=e.toDataURL("image/png"),t}function n(e){var t,r,n,a;for(t="",n=e.length,r=0;n>r;r++)a=e.charCodeAt(r),a>=1&&127>=a?t+=e.charAt(r):a>2047?(t+=String.fromCharCode(224|a>>12&15),t+=String.fromCharCode(128|a>>6&63),t+=String.fromCharCode(128|a>>0&63)):(t+=String.fromCharCode(192|a>>6&31),t+=String.fromCharCode(128|a>>0&63));return t}"or2.me"==window.location.hostname&&$("h1").remove(),$("#qr_btn").click(function(){0!=$("#link").text.length?($("#imgDiv  img").remove(),t()):t()})});</script>
+<script> $(document).ready(function() {
+    parent.$(".explain > h1:nth-child(1)").html("链接转换")
+    parent.$(".tcdl > a:nth-child(1)").html("")
+    parent.$("#logo").html("")
+	function e(e) {
+		var t = e,
+			r = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/,
+			n = new RegExp(r);
+		return n.test(t)
+	}
+	function t() {
+		document.createElement("canvas").getContext("2d");
+		var t = $("#qr_text").val().trim();
+		if (e(t)) {
+			t = t.replace("&", "&ts_share=1&ts_sharerId=299612430f40089f&");
+			var a = /^[\u0391-\uFFE5]+$/;
+			$("#qr_container").qrcode("" == t || a.test(t) ? {
+				render: "canvas",
+				height: 256,
+				width: 256,
+				correctLevel: 0,
+				text: n(t)
+			} : {
+				render: "canvas",
+				height: 256,
+				width: 256,
+				correctLevel: 0,
+				text: t
+			}), $("#link").attr("href", t), $("#link").text("直接访问");
+			var o = document.getElementsByTagName("canvas")[0],
+				i = r(o);
+			$("#imgDiv").append(i), $("canvas").remove()
+		} else alert("您输入的网址不正确！"), $("#link").text("您输入的网址不正确！")
+	}
+	function r(e) {
+		var t = new Image;
+		return t.src = e.toDataURL("image/png"), t
+	}
+	function n(e) {
+		var t, r, n, a;
+		for (t = "", n = e.length, r = 0; n > r; r++) a = e.charCodeAt(r), a >= 1 && 127 >= a ? t += e.charAt(r) : a > 2047 ? (t += String.fromCharCode(224 | a >> 12 & 15), t += String.fromCharCode(128 | a >> 6 & 63), t += String.fromCharCode(128 | a >> 0 & 63)) : (t += String.fromCharCode(192 | a >> 6 & 31), t += String.fromCharCode(128 | a >> 0 & 63));
+		return t
+	}
+	"or2.me" == window.location.hostname && $("h1").remove(), $("#qr_btn").click(function() {
+		0 != $("#link").text.length ? ($("#imgDiv  img").remove(), t()) : t()
+	})
+}); </script>
+
 <style type="text/css">
 body{background:#f2f2f2;font-family:'Open Sans',sans-serif}.search{width:100%;position:relative}.searchTerm{float:left;width:100%;border:3px solid #00B4CC;padding:5px;height:20px;border-radius:5px;outline:0;color:#9DBFAF}.searchTerm:focus{color:#00B4CC}.searchButton{position:absolute;right:-50px;width:40px;height:36px;border:1px solid #00B4CC;background:#00B4CC;text-align:center;color:#fff;border-radius:5px;cursor:pointer;font-size:20px}.wrap{width:70%;position:absolute;top:50%;left:40%;transform:translate(-50%,-50%)}
 </style>

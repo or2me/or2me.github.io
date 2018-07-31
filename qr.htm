@@ -13,21 +13,79 @@
 
 	<title>雅国专用网易严选、考拉返利链接生成器</title>
 	<script src="https://lib.sinaapp.com/js/jquery/3.1.0/jquery-3.1.0.min.js"></script>
-	<script src="https://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    
+<style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  width: 100%;
+  position: relative
+}
+
+.searchTerm {
+  float: left;
+  width: 100%;
+  border: 3px solid #00B4CC;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  position: absolute;  
+  right: -50px;
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+    </style>
 </head>
 <body>
 	<h1 id="sss">请返回上一级，点击页面底部的访问原网页，或复制网址后使用其他浏览器打开！</h1>
-<div>
-    <label for="qr_text">网址:</label>      
-    <input id="qr_text" type="text" value="" style="width:80%;" /> 
-    <button id="qr_btn" value="button">立刻生成</button> <br />
-</div>
+
+<div class="wrap">
+    <div class="search">
+       <input id="qr_text" type="text" class="searchTerm" placeholder="请输入严选/考拉的商品网址!">
+       <button id="qr_btn" type="submit"  class="searchButton">
+         go
+      </button>
+    </div>
+ </div>
+
+
 <div id="qr_container" style="margin:auto; position:relative;"></div>
 <a id="imgDiv" style="margin:auto; position:relative;"></a>
 <script>
 	$(document).ready(function(){
     if(window.location.hostname == "or2.me"){
-        $('h1').html( "请输入严选/考拉的商品网址!");
+        $('h1').remove();
     }
     // 点击生成二维码
     $('#qr_btn').click(function(){  

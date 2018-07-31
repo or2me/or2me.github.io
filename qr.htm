@@ -5,11 +5,10 @@
 <title>雅国专用网易严选、考拉返利链接生成器</title>
 </head>
 <body>
-<h1>请返回上一级，点击页面底部的访问原网页，或复制网址后使用其他浏览器打开！</h1>
 <script src="https://lib.sinaapp.com/js/jquery/3.1.0/jquery-3.1.0.min.js"></script>
 <script src="https://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
 <div id="qr_container">
-	<div class="input-group col-md-3 mx-auto" style="margin-top:0px;">
+	<div class="input-group col-md-3 m-auto" style="margin-top:30%;">
         <input id="qr_text" type="text" class="form-control" style="text-align:center" onkeydown='if(event.keyCode==13) $("#qr_btn").click();' placeholder="请输入严选/考拉的商品网址!">
         <span class="input-group-btn">
             <button class="btn btn-info btn-search" id="qr_btn">提交</button>
@@ -23,7 +22,7 @@
 	<br>
 	<div style="text-align:center">
         
-        <a id="link" href="#" class="btn btn-info" role="button">雅国专属</a>
+        <a id="link" href="#" class="btn btn-info" role="button">请返回上一级，点击页面底部的访问原网页，或复制网址后使用其他浏览器打开！</a>
 	</div>
 </div>
 <script> $(document).ready(function() {
@@ -66,7 +65,7 @@
 		for (t = "", n = e.length, r = 0; n > r; r++) a = e.charCodeAt(r), a >= 1 && 127 >= a ? t += e.charAt(r) : a > 2047 ? (t += String.fromCharCode(224 | a >> 12 & 15), t += String.fromCharCode(128 | a >> 6 & 63), t += String.fromCharCode(128 | a >> 0 & 63)) : (t += String.fromCharCode(192 | a >> 6 & 31), t += String.fromCharCode(128 | a >> 0 & 63));
 		return t
 	}
-	"or2.me" == window.location.hostname && $("h1").remove(), $("#qr_btn").click(function() {
+	"or2.me" == window.location.hostname && $("#link").text("雅国专属"), $("#qr_btn").click(function() {
 		0 != $("#link").text.length ? ($("#imgDiv  img").remove(), t()) : t()
 	})
 }); </script>
